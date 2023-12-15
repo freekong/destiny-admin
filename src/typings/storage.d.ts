@@ -8,6 +8,8 @@ declare namespace StorageInterface {
   interface Local {
     /** 主题颜色 */
     themeColor: string;
+    /** 语言 */
+    lang: string;
     /** 用户token */
     token: string;
     /** 用户刷新token */
@@ -18,7 +20,5 @@ declare namespace StorageInterface {
     themeSettings: Theme.Setting;
     /** 多页签路由信息 */
     multiTabRoutes: App.GlobalTabRoute[];
-    /** 行政区域数据 */
-    areaData: Track.AreaOptionsRow[];
   }
 }

@@ -1,6 +1,7 @@
 <script setup lang='ts'>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useAuthStore } from '@/store'
+import { useThemeStore } from '@/store'
 
 const { login } = useAuthStore()
 
@@ -14,21 +15,24 @@ function handleLogin() {
   login(loginForm.value)
 }
 
-
+onMounted(() => {
+  const { changeDarkMode } = useThemeStore()
+  changeDarkMode()
+})
 
 </script>
 <template>
   <div class="login-cointainer">
     <div class="login-form">
       <el-form label-width="120px">
-        <el-form-item label="用户名">
+        <el-form-item :label="$t('common.username')">
           <el-input v-model="loginForm.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码">
+        <el-form-item :label="$t('common.password')">
           <el-input v-model="loginForm.password"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="handleLogin">登录</el-button>
+          <el-button type="primary" @click="handleLogin">{{ $t('common.login') }}</el-button>
         </el-form-item>
       </el-form>
     </div>

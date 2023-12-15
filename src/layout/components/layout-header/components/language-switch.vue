@@ -1,4 +1,8 @@
 <script setup lang='ts'>
+import { useI18n } from "vue-i18n"
+import { localStg } from "@/utils"
+
+const { locale } = useI18n()
 const languageOptions = [
   {
     value: 'chinese',
@@ -11,8 +15,8 @@ const languageOptions = [
 ]
 
 function changeLanguage(val: string) {
-  console.log('%c [ val ]-14', 'font-size:13px; background:#615a7c; color:#a59ec0;', val)
-   
+  locale.value = val
+  localStg.set('lang', val)
 }
 
 </script>
@@ -23,7 +27,7 @@ function changeLanguage(val: string) {
       :show-arrow="false"
       @command="changeLanguage"
     >
-      <el-text>
+      <el-text> 
         <svg-icon local-icon="language" class="text-18px cursor-pointer"></svg-icon>
       </el-text>
       <template #dropdown>
@@ -33,23 +37,6 @@ function changeLanguage(val: string) {
         >{{ item.label }}</el-dropdown-item>
       </template>
     </el-dropdown>
-    <!-- <el-popover
-      trigger="click"
-      :show-arrow="false"
-    >
-      <template #reference>
-        <svg-icon local-icon="language" class="text-16px"></svg-icon>
-      </template>
-      <template #default>
-        <ul>
-          <li 
-            v-for="item in languageOptions" 
-            :key="item.value"
-            class="h-30px text-center line-height-30px cursor-pointer"
-          >{{ item.label }}</li>
-        </ul>
-      </template>
-    </el-popover> -->
   </div>
 </template>
 <style scoped lang='scss'>

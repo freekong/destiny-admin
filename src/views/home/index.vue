@@ -3,7 +3,7 @@
 </script>
 <template>
   <div class="home-content">
-    home page
+    home page {{ $t('common.home') }}
   </div>
 </template>
 <style scoped lang='scss'>

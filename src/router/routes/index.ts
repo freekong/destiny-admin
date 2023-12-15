@@ -4,6 +4,7 @@ const login = () => import('@/views/login/index.vue')
 const errorPage = () => import('@/views/error-page/404.vue')
 
 const layout = () => import('@/layout/index.vue')
+const home = () => import('@/views/home/index.vue')
 
 const routes: RouteRecordRaw[] = [
   {
@@ -30,11 +31,11 @@ const routes: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: 'index',
-        name: 'index',
-        component: () => import('@/views/home/index.vue'),
+        path: '/home',
+        name: 'home',
+        component: home,
         meta: {
-          title: 'index',
+          title: 'home',
           hidden: false,
           isLeaf: true
         }
