@@ -1,18 +1,24 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { setupStore } from './store'
-import { setuoRouter } from '@/router'
+import { setupRouter } from '@/router'
 import { setupI18n } from '@/locales'
 import '@/styles/index.scss'
 import '@/styles/element/index.scss'
+import '@/styles/css/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'virtual:svg-icons-register';
 import 'uno.css';
 
-const app = createApp(App)
+async function setupApp() {
+  const app = createApp(App)
+  
+  setupStore(app)
+  await setupRouter(app)
+  setupI18n(app)
+  
+  app.mount('#app')
+}
 
-setupStore(app)
-setuoRouter(app)
-setupI18n(app)
+setupApp()
 
-app.mount('#app')

@@ -60,6 +60,14 @@
 //   'small': 28px
 // );
 
+$--header: (
+  'padding': 0,
+  'height': 60px,
+);
+$--menu: (
+  'border-color': yellow
+);
+
 
 
 // // we can add this to custom namespace, default is 'el'
@@ -69,7 +77,7 @@
 
 // // You should use them in scss, because we calculate it by sass.
 // // comment next lines to use default color
-// @forward "element-plus/theme-chalk/src/common/var.scss" with (
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
 //   // do not use same name, it will override.
 //   $colors: $--colors,
 //   $text-color: $--text-color,
@@ -84,7 +92,9 @@
 //   $cascader: $--cascader,
 //   $common-component-size: $--common-component-size,
 //   $button-padding-horizontal: ("default": 50px)
-// );
+  $header: $--header,
+  $menu: $--menu,
+);
 
 // if you want to import all
 @use "element-plus/theme-chalk/src/index.scss" as *;

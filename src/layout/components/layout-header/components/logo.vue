@@ -1,11 +1,14 @@
 <script setup lang='ts'>
+import { useThemeStore } from '@/store'
+import { storeToRefs } from 'pinia'
 
+const { menuCollapse } = storeToRefs(useThemeStore())
 </script>
 <template>
-  <div class="logo w-200px text-24px text-center font-bold">
+<div class="logo text-24px flex justify-around items-center text-center" :style="`width: ${menuCollapse ? 64 : 220}px`">
+  <img width="20px" height="20px" src="../../../../assets/images/logo.png" alt="">
+  <h2 v-show="!menuCollapse" class="text-20px font-bold transition duration-300 ease-in-out">
     destiny
-  </div>
+  </h2>
+</div>
 </template>
-<style scoped lang='scss'>
-
-</style>

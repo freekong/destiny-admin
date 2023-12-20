@@ -28,7 +28,7 @@ function changeLanguage(val: string) {
       @command="changeLanguage"
     >
       <el-text> 
-        <svg-icon local-icon="language" class="text-18px cursor-pointer"></svg-icon>
+        <svg-icon local-icon="language" class="text-20px cursor-pointer"></svg-icon>
       </el-text>
       <template #dropdown>
         <el-dropdown-item

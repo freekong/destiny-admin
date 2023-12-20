@@ -5,6 +5,8 @@ const errorPage = () => import('@/views/error-page/404.vue')
 
 const layout = () => import('@/layout/index.vue')
 const home = () => import('@/views/home/index.vue')
+const chart = () => import('@/views/application/chart/index.vue')
+const table = () => import('@/views/application/table/index.vue')
 
 const routes: RouteRecordRaw[] = [
   {
@@ -13,31 +15,71 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/login',
+    name: 'login',
     component: login,
     meta: {
       title: 'login',
       hidden: true,
-      isLeaf: false
+      menu: false
     }
   },
   {
     path: '/home',
-    name: 'home',
+    name: 'main',
     component: layout,
     meta: {
       title: 'home',
+      icon: 'home',
       hidden: false,
-      isLeaf: false
+      menu: false
     },
+    redirect: '/home/index',
     children: [
       {
-        path: '/home',
+        path: '/home/index',
         name: 'home',
         component: home,
         meta: {
           title: 'home',
+          keepAlive: true,
           hidden: false,
-          isLeaf: true
+          menu: false
+        }
+      }
+    ]
+  },
+  {
+    path: '/application',
+    name: 'application',
+    component: layout,
+    meta: {
+      title: 'application',
+      icon: 'app',
+      hidden: false,
+      menu: true
+    },
+    redirect: '/application/chart',
+    children: [
+      {
+        path: '/application/chart',
+        name: 'chart',
+        component: chart,
+        meta: {
+          title: 'chart',
+          keepAlive: true,
+          hidden: false,
+          menu: false
+        }
+      },
+      {
+        path: '/application/table',
+        name: 'table',
+        component: table,
+        meta: {
+          title: 'table',
+          keepAlive: true,
+          hidden: false,
+          menu: false
         }
       }
     ]
@@ -54,7 +96,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '404',
       hidden: true,
-      isLeaf: false
+      menu: false
     }
   }
 ]

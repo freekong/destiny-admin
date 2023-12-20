@@ -6,7 +6,7 @@ const theme = useThemeStore()
 
 </script>
 <template>
-  <div class="dark-mode-switch mr-10px">
+  <div class="dark-mode-switch">
     <el-switch
       v-model="theme.darkMode"
       @change="theme.changeDarkMode"

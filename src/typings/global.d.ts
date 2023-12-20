@@ -24,5 +24,12 @@ declare namespace Common {
   }
 }
 
+declare namespace Theme {
+  /** 主题 */
+  type ThemeMode = 'light' | 'dark';
+
+  type AnimationMode = 'zoom-fade' | 'zoom-out' | 'fade-slide' | 'fade' | 'fade-bottom' | 'fade-scale';
+}
+
 /** 构建时间 */
 declare const PROJECT_BUILD_TIME: string;

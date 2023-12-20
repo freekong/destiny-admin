@@ -4,13 +4,16 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import progress from 'vite-plugin-progress';
 import path from 'node:path'
 import { viteMockServe } from 'vite-plugin-mock'
 import Unocss from 'unocss/vite';
 import { presetUno, presetAttributify, presetIcons } from 'unocss'
+import setupExtend from 'vite-plugin-vue-setup-extend'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve("./src"),
@@ -37,7 +40,11 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
+    vue({
+      script: {
+        defineModel: true
+      }
+    }),
     Unocss({ // 使用Unocss
       presets: [
         presetUno(),
@@ -48,10 +55,8 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
-    }),
-    Components({
-      dts: 'src/typings/components.d.ts'
+      dts: 'src/typings/components.d.ts',
+      resolvers: [ElementPlusResolver()],
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹
@@ -66,6 +71,8 @@ export default defineConfig({
         import { setupMockServer } from '../mock';
         setupMockServer();
       `
-    })
+    }),
+    progress(), // 显示打包进度条
+    setupExtend(), // 解析script setup, 便于直接script中设置组件name
   ],
 })

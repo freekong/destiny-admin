@@ -4,7 +4,7 @@ import { createRouterGuard } from "./guards";
 
 
 
-export async function setuoRouter(app: App) {
+export async function setupRouter(app: App) {
   app.use(router);
 
   createRouterGuard(router)
