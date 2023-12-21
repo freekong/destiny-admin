@@ -1,9 +1,9 @@
 
-// $mainColor: #d0daeb;
+// $mainColor: #e03010;
 
 // $--colors: (
 //   "primary": (
-//     "base": #1a54e9,
+//     "base": #c3e91a,
 //   ),
 //   // "success": (
 //   //   "base": #21ba45,
@@ -57,15 +57,14 @@
 //   'menu-text-color': #606266,
 // );
 // $--common-component-size: (
-//   'small': 28px
+//   'small': 32px
 // );
 
 $--header: (
   'padding': 0,
-  'height': 60px,
 );
-$--menu: (
-  'border-color': yellow
+$--main: (
+  'padding': 0,
 );
 
 
@@ -79,21 +78,21 @@ $--menu: (
 // // comment next lines to use default color
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
 //   // do not use same name, it will override.
-//   $colors: $--colors,
-//   $text-color: $--text-color,
-//   $fill-color: $--fill-color,
-//   $border-color: $--border-color,
-//   $table: $--table,
-//   $dialog: $--dialog,
-//   $input-disabled: $--input-disabled,
-//   $select: $--select,
-//   $select-option: $--select-option,
-//   $tree: $--tree,
-//   $cascader: $--cascader,
-//   $common-component-size: $--common-component-size,
-//   $button-padding-horizontal: ("default": 50px)
+  // $colors: $--colors,
+  // $text-color: $--text-color,
+  // $fill-color: $--fill-color,
+  // $border-color: $--border-color,
+  // $table: $--table,
+  // $dialog: $--dialog,
+  // $input-disabled: $--input-disabled,
+  // $select: $--select,
+  // $select-option: $--select-option,
+  // $tree: $--tree,
+  // $cascader: $--cascader,
+  // $common-component-size: $--common-component-size,
+  // $button-padding-horizontal: ("default": 50px),
   $header: $--header,
-  $menu: $--menu,
+  $main: $--main,
 );
 
 // if you want to import all

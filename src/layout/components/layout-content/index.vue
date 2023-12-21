@@ -7,7 +7,6 @@ const { animationMode } = storeToRefs(useThemeStore())
 const { tabsList } = storeToRefs(useTabsStore())
 
 const cacheComponents = computed(() => {
-  console.log('%c [ tabsList.value.map((item) => item.name) ]-11', 'font-size:13px; background:#f917f2; color:#ff5bff;', tabsList.value.map((item) => item.name))
   return tabsList.value.map((item) => item.name)
 })
 

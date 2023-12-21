@@ -9,7 +9,7 @@ const { menuCollapse } = storeToRefs(useThemeStore())
 <template>
   <div class="layout h-full flex">
     <el-container>
-      <el-header height="80px" style="padding: 0;">
+      <el-header height="60px">
         <layout-header></layout-header>
       </el-header>
       <el-container>
