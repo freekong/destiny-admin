@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
 import { fetchLogin } from "@/service";
-import { ElMessage } from "element-plus";
 import { useRouterPush } from "~/src/composables";
 import { setToken } from "./helpers";
+import { useMessage } from "naive-ui";
 
+const message = useMessage()
 
 export const useAuthStore = defineStore('auth-store', () => {
 
@@ -14,15 +15,9 @@ export const useAuthStore = defineStore('auth-store', () => {
     if (!error) {
       const { token } = data
       handleActionAfterLogin(token)
-      ElMessage({
-        type: 'success',
-        message: '登录成功！'
-      })
+      message.success('登录成功！')
     } else {
-      ElMessage({
-        type: 'error',
-        message: error.msg
-      })
+      message.error(error.msg)
     }
   }
 

@@ -5,7 +5,7 @@ import Unocss from 'unocss/vite';
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { viteMockServe } from 'vite-plugin-mock';
 import progress from 'vite-plugin-progress';
@@ -25,10 +25,11 @@ export function setupVitePlugins(): PluginOption[] {
         presetIcons()],
     }),
     AutoImport({
-      resolvers: [ElementPlusResolver()]
+      
     }),
     Components({
       dts: 'src/typings/components.d.ts',
+      resolvers: [NaiveUiResolver()]
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹

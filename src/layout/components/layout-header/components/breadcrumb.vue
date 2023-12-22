@@ -6,9 +6,9 @@ const router: Router = useRouter()
 const routes = computed(() => router.currentRoute.value.matched)
 </script>
 <template>
-  <el-breadcrumb separator="/">
-    <el-breadcrumb-item v-for="item in routes" :key="item.path" :to="{ path: item?.path }">{{ item?.meta?.title }}</el-breadcrumb-item>
-  </el-breadcrumb>
+  <n-breadcrumb separator="/">
+    <n-breadcrumb-item v-for="item in routes" :key="item.path" >{{ item?.meta?.title }}</n-breadcrumb-item>
+  </n-breadcrumb>
 </template>
 <style scoped lang='scss'>
 

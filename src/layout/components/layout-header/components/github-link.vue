@@ -1,5 +1,8 @@
+<script setup lang='ts'>
+function linkGithub() {
+  window.open('https://github.com/freekong/destiny-admin')
+}
+</script>
 <template>
-  <el-link :underline="false" href="https://github.com/freekong/destiny-admin" target="_blank">
-    <svg-icon local-icon="github" class="text-22px cursor-pointer"></svg-icon>
-  </el-link>
+  <svg-icon local-icon="github" class="text-22px cursor-pointer" @click="linkGithub"></svg-icon>
 </template>

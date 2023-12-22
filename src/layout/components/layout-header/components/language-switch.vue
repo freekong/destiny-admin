@@ -14,6 +14,7 @@ const languageOptions = [
   }
 ]
 
+
 function changeLanguage(val: string) {
   locale.value = val
   localStg.set('lang', val)
@@ -22,21 +23,13 @@ function changeLanguage(val: string) {
 </script>
 <template>
   <div>
-    <el-dropdown
-      placement="bottom"
-      :show-arrow="false"
-      @command="changeLanguage"
+    <n-popselect
+      :options="languageOptions"
+      v-model:value="locale"
+      :on-update:value="changeLanguage"
     >
-      <el-text> 
-        <svg-icon local-icon="language" class="text-20px cursor-pointer"></svg-icon>
-      </el-text>
-      <template #dropdown>
-        <el-dropdown-item
-          v-for="item in languageOptions"
-          :command="item.value"
-        >{{ item.label }}</el-dropdown-item>
-      </template>
-    </el-dropdown>
+      <svg-icon local-icon="language" class="text-20px cursor-pointer"></svg-icon>
+    </n-popselect>
   </div>
 </template>
 <style scoped lang='scss'>

@@ -7,27 +7,28 @@ const { menuCollapse } = storeToRefs(useThemeStore())
 
 </script>
 <template>
-  <div class="layout h-full flex">
-    <el-container>
-      <el-header height="60px">
-        <layout-header></layout-header>
-      </el-header>
-      <el-container>
-        <el-aside :width="`${menuCollapse ? 64 : 220}px`">
-          <layout-aside></layout-aside>
-        </el-aside>
-        <el-container>
-          <el-main>
-            <layout-tab></layout-tab>
-            <layout-content></layout-content>
-          </el-main>
-          <el-footer>
-            <layout-footer></layout-footer>
-          </el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
-  </div>
+  <n-layout class="h-full" content-class="flex-col">
+    <n-layout-header class="h-60px">
+      <layout-header></layout-header>
+    </n-layout-header>
+    <n-layout has-sider content-class="flex-1" class="flex">
+      <n-layout-sider 
+        :native-scrollbar="false"
+        :collapsed="menuCollapse" 
+        collapse-mode="width" 
+        :collapsed-width="64" 
+        content-class="transition transition-width duration-300 ease-in-out">
+        <layout-aside></layout-aside>
+      </n-layout-sider>
+      <n-layout class="flex-1" content-class="flex-col">
+        <n-layout-content :native-scrollbar="false" content-class="flex-1">
+          <layout-tab></layout-tab>
+          <layout-content></layout-content>
+        </n-layout-content>
+        <n-layout-footer >
+          <layout-footer></layout-footer>
+        </n-layout-footer>
+      </n-layout>
+    </n-layout>
+  </n-layout>
 </template>
-<style scoped lang='scss'>
-</style>

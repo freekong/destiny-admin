@@ -1,6 +1,7 @@
 import { useDark, useToggle } from '@vueuse/core';
+import { darkTheme } from 'naive-ui';
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useThemeStore = defineStore('theme-store', () => {
   
@@ -12,6 +13,12 @@ export const useThemeStore = defineStore('theme-store', () => {
 
   const animationMode = ref<Theme.AnimationMode>('fade-slide')
 
+  const naiveTheme = computed(() => {
+    console.log('%c [ darkMode.value ]-18', 'font-size:13px; background:#937987; color:#d7bdcb;', darkMode.value)
+    console.log('%c [ darkTheme ]-19', 'font-size:13px; background:#f6f7fd; color:#ffffff;', darkTheme)
+    return darkMode.value ? darkTheme : undefined;
+  })
+
   function changeMenuCollapse() {
     menuCollapse.value = !menuCollapse.value
   }
@@ -20,7 +27,8 @@ export const useThemeStore = defineStore('theme-store', () => {
    * @description: 暗黑模式切换
    * @return {*}
    */  
-  function changeDarkMode() {
+  function changeDarkMode(val: boolean) {
+    darkMode.value = val
     useToggle(darkMode)
   }
 
@@ -28,6 +36,7 @@ export const useThemeStore = defineStore('theme-store', () => {
     darkMode,
     menuCollapse,
     animationMode,
+    naiveTheme,
     changeDarkMode,
     changeMenuCollapse,
   }

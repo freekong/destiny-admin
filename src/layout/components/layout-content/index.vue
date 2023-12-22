@@ -12,7 +12,7 @@ const cacheComponents = computed(() => {
 
 </script>
 <template>
-  <div class="layout-content">
+  <div class="layout-content p10px">
     <router-view v-slot="{ Component, route }">
       <transition
         :name="animationMode"

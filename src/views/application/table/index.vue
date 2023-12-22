@@ -8,7 +8,7 @@ const num = ref<number>(1)
 <template>
   <div>
     table--
-    <el-input v-model="num"></el-input>
+    <n-input v-model="num"></n-input>
   </div>
 </template>
 <style scoped lang='scss'>
