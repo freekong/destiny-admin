@@ -13,9 +13,15 @@ export const useThemeStore = defineStore('theme-store', () => {
 
   const animationMode = ref<Theme.AnimationMode>('fade-slide')
 
+  const themeOverrides = {
+    Tabs: {
+      tabColor: 'transparent',
+      tabBorderColor: 'transparent',
+      tabBorderRadius: '8px'
+    }
+  }
+
   const naiveTheme = computed(() => {
-    console.log('%c [ darkMode.value ]-18', 'font-size:13px; background:#937987; color:#d7bdcb;', darkMode.value)
-    console.log('%c [ darkTheme ]-19', 'font-size:13px; background:#f6f7fd; color:#ffffff;', darkTheme)
     return darkMode.value ? darkTheme : undefined;
   })
 
@@ -37,6 +43,7 @@ export const useThemeStore = defineStore('theme-store', () => {
     menuCollapse,
     animationMode,
     naiveTheme,
+    themeOverrides,
     changeDarkMode,
     changeMenuCollapse,
   }

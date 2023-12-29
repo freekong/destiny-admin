@@ -21,7 +21,5 @@ import collapseBtn from './components/collapse-btn.vue'
   </header>
 </template>
 <style scoped lang='scss'>
-.layout-header {
-  // border-bottom: 1px solid var(--el-border-color);
-}
+
 </style>

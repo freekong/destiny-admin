@@ -1,4 +1,9 @@
-
+interface Window {
+  $loadingBar?: import('naive-ui').LoadingBarProviderInst;
+  $dialog?: import('naive-ui').DialogProviderInst;
+  $message?: import('naive-ui').MessageProviderInst;
+  $notification?: import('naive-ui').NotificationProviderInst;
+}
 /** 通用类型 */
 declare namespace Common {
   /**
@@ -10,7 +15,7 @@ declare namespace Common {
   /** 选项数据 */
   type OptionWithKey<K> = { value: K; label: string };
 
-  type DialogType = 'add' | 'edit';
+  type ModalType = 'add' | 'edit';
 
   interface IndeterminateObject {
     [key: string]: any
@@ -18,9 +23,10 @@ declare namespace Common {
 
   /** 翻页参数 */
   interface PageInfo {
-    currentPage: number;
+    page: number;
     pageSize: number;
-    totalNum: number;
+    itemCount: number;
+    pageCount?: number;
   }
 }
 

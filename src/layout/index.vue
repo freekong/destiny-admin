@@ -22,7 +22,9 @@ const { menuCollapse } = storeToRefs(useThemeStore())
       </n-layout-sider>
       <n-layout class="flex-1" content-class="flex-col">
         <n-layout-content :native-scrollbar="false" content-class="flex-1">
-          <layout-tab></layout-tab>
+          <n-layout-header>
+            <layout-tab></layout-tab>
+          </n-layout-header>
           <layout-content></layout-content>
         </n-layout-content>
         <n-layout-footer >

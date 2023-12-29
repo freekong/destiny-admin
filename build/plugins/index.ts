@@ -10,6 +10,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { viteMockServe } from 'vite-plugin-mock';
 import progress from 'vite-plugin-progress';
 import setupExtend from 'vite-plugin-vue-setup-extend';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 export function setupVitePlugins(): PluginOption[] {
   const plugins = [
@@ -18,6 +19,7 @@ export function setupVitePlugins(): PluginOption[] {
         defineModel: true
       }
     }),
+    vueJsx(),
     Unocss({ // 使用Unocss
       presets: [
         presetUno(),

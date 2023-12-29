@@ -13,26 +13,29 @@ function handleTabChange(name: string) {
 
 </script>
 <template>
-  <div class="tab-content bg-var(--n-color)">
+  <div class="tab-content">
     <n-tabs
       v-model:value="activeTabName"
       type="card"
       style="border-bottom: none;"
+      tab-style="border: none;"
       :closable="tabsList.length > 1"
       :on-update:value="handleTabChange"
       :on-close="removeTab"
     >
-      <n-tab-pane
+      <n-tab
         v-for="item in tabsList"
         :key="item.name"
         :tab="item.title"
         :name="item.name"
-      ></n-tab-pane>
+      ></n-tab>
     </n-tabs>
   </div>
 </template>
 <style scoped lang='scss'>
 .tab-content {
-  background-color: var(--n-color);
+  .n-tabs .n-tabs-nav.n-tabs-nav--card-type .n-tabs-tab.n-tabs-tab--active {
+    background: blue;
+  }
 }
 </style>

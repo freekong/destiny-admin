@@ -6,7 +6,7 @@ const errorPage = () => import('@/views/error-page/404.vue')
 const layout = () => import('@/layout/index.vue')
 const home = () => import('@/views/home/index.vue')
 const chart = () => import('@/views/application/chart/index.vue')
-const table = () => import('@/views/application/table/index.vue')
+const list = () => import('@/views/application/list/index.vue')
 
 const routes: RouteRecordRaw[] = [
   {
@@ -72,11 +72,11 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
-        path: '/application/table',
-        name: 'table',
-        component: table,
+        path: '/application/list',
+        name: 'list',
+        component: list,
         meta: {
-          title: 'table',
+          title: 'list',
           keepAlive: true,
           hidden: false,
           menu: false

@@ -2,9 +2,6 @@ import { defineStore } from "pinia";
 import { fetchLogin } from "@/service";
 import { useRouterPush } from "~/src/composables";
 import { setToken } from "./helpers";
-import { useMessage } from "naive-ui";
-
-const message = useMessage()
 
 export const useAuthStore = defineStore('auth-store', () => {
 
@@ -15,9 +12,9 @@ export const useAuthStore = defineStore('auth-store', () => {
     if (!error) {
       const { token } = data
       handleActionAfterLogin(token)
-      message.success('登录成功！')
+      window.$message?.success('登录成功！')
     } else {
-      message.error(error.msg)
+      window.$message?.error(error.msg)
     }
   }
 

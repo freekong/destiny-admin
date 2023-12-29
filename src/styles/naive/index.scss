@@ -1,0 +1,9 @@
+
+
+$tabActiveBgColor: rgba(24, 160, 88, 0.1);
+
+.n-tabs .n-tabs-nav.n-tabs-nav--card-type .n-tabs-tab.n-tabs-tab--active {
+  background: $tabActiveBgColor;
+}
+
+@import "./dark.scss"

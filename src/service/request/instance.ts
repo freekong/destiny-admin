@@ -63,7 +63,6 @@ export default class CustomAxiosInstance {
     );
     this.instance.interceptors.response.use(
      (async response => {
-      console.log('%c [ response ]-67', 'font-size:13px; background:#877fc1; color:#cbc3ff;', response)
         const { status } = response;
         if (status === 200 || status < 300 || status === 304) {
           const backend = response.data;

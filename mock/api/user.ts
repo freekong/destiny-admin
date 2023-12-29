@@ -1,14 +1,6 @@
 import type { MockMethod } from 'vite-plugin-mock'
 import { userModel } from '../model';
-
-/** 参数错误的状态码 */
-const ERROR_PARAM_CODE = 10000;
-
-const ERROR_USER_CODE = 400201;
-
-const ERROR_PARAM_MSG = '参数校验失败！';
-
-const ERROR_USER_MSG = '用户名或密码错误！';
+import { ERROR } from '../common'
 
 const apis: MockMethod[] = [
   {
@@ -20,8 +12,8 @@ const apis: MockMethod[] = [
 
       if (!username || !password) {
         return {
-          code: ERROR_PARAM_CODE,
-          message: ERROR_PARAM_MSG,
+          code: ERROR.ERROR_PARAM.CODE,
+          message: ERROR.ERROR_PARAM.MSG,
           data: null
         };
       }
@@ -38,8 +30,8 @@ const apis: MockMethod[] = [
       }
 
       return {
-        code: ERROR_USER_CODE,
-        message: ERROR_USER_MSG,
+        code: ERROR.ERROR_USER.CODE,
+        message: ERROR.ERROR_USER.MSG,
         data: null
       }
     }
