@@ -1,6 +1,6 @@
 <script setup lang='tsx' name="list" >
 import { h, onMounted, ref } from "vue";
-import { useMemberStore } from '@/store'
+import { useMemberStore } from '@/store/modules/member'
 import { storeToRefs } from "pinia";
 import { DataTableColumns, DataTableRowKey, NButton, NSpace, NText } from "naive-ui";
 import memberModal from './components/member-modal.vue'

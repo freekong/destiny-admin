@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { onMounted, ref } from "vue";
-import { useAuthStore } from '@/store'
-import { useThemeStore } from '@/store'
+import { useAuthStore } from '@/store/modules/auth'
+import { useThemeStore } from '@/store/modules/theme'
 
 const { login } = useAuthStore()
 

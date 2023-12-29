@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { useMemberStore } from "@/store";
-import { validatePhone } from "@/utils";
+import { useMemberStore } from "@/store/modules/member";
+import { validatePhone } from "@/utils/validate";
 import { FormInst, FormRules } from "naive-ui";
 import { watch } from "vue";
 import { computed, reactive, ref } from "vue";

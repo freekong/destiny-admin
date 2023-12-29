@@ -28,7 +28,6 @@ export function useRouterPush(inSetup = true) {
    * @param newTab - 在新的浏览器标签打开
    */
   function toHome(newTab = false) {
-    console.log('[ 11111 ] >')
     routerPush({ path: '/home' }, newTab);
   }
 

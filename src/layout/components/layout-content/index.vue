@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { computed } from "vue";
-import { useTabsStore, useThemeStore } from '@/store';
+import { useThemeStore } from '@/store/modules/theme';
+import { useTabsStore } from '@/store/modules/tabs'
 import { storeToRefs } from "pinia";
 
 const { animationMode } = storeToRefs(useThemeStore())

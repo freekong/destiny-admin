@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { storeToRefs } from 'pinia'
 import { RouteRecord, RouterLink, useRouter } from 'vue-router'
-import { useThemeStore } from '@/store'
+import { useThemeStore } from '@/store/modules/theme'
 import { h, ref } from 'vue'
 import { MenuOption } from 'naive-ui'
 import SvgIcon from '@/components/common/svg-icon.vue'

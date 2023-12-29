@@ -1,8 +1,17 @@
 {
   "name": "desyiny-admin",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "keywords": [
+    "vue",
+    "vue3",
+    "vite",
+    "admin-template",
+    "naive-ui",
+    "unocss",
+    "typescript"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { useI18n } from "vue-i18n"
-import { localStg } from "@/utils"
+import { localStg } from "@/utils/storage/local"
 
 const { locale } = useI18n()
 const languageOptions = [

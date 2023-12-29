@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { LayoutHeader, LayoutAside, LayoutContent, LayoutFooter, LayoutTab } from './components'
-import { useThemeStore } from '@/store'
+import { useThemeStore } from '@/store/modules/theme'
 import { storeToRefs } from 'pinia'
 
 const { menuCollapse } = storeToRefs(useThemeStore())

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useTabsStore } from "@/store";
+import { useTabsStore } from "@/store/modules/tabs";
 import { storeToRefs } from "pinia";
 
 const { tabsList, activeTabName } = storeToRefs(useTabsStore())

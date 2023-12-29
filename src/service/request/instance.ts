@@ -1,13 +1,13 @@
 import axios from 'axios';
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import {
-  localStg,
   handleAxiosError,
   handleBackendError,
   handleResponseError,
-  handleServiceResult,
-  transformRequestData
-} from '@/utils';
+} from '@/utils/service/error';
+import { handleServiceResult } from '@/utils/service/handler';
+import { localStg } from '@/utils/storage/local';
+import { transformRequestData } from '@/utils/service/transform';
 import { REFRESH_TOKEN_CODE } from '@/config';
 
 /**

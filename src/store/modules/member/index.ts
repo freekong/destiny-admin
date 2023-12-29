@@ -1,4 +1,4 @@
-import { apiAddMember, apiEditMember, apiMemberList, apideleteMember } from '@/service';
+import { apiAddMember, apiEditMember, apiMemberList, apideleteMember } from '@/service/api/member';
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
