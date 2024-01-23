@@ -7,11 +7,13 @@ import '@/styles/index.scss'
 import '@/styles/css/index.css'
 import 'virtual:svg-icons-register';
 import 'uno.css';
+import { setupDirective } from '@/directive'
 
 async function setupApp() {
   const app = createApp(App)
   
   setupStore(app)
+  setupDirective(app)
   await setupRouter(app)
   setupI18n(app)
 

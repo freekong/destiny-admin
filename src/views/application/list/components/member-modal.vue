@@ -195,7 +195,7 @@ function closeMember() {
           <n-input-number v-model:value="memberForm.age" style="width: 280px;"></n-input-number>
         </n-form-item>
         <n-form-item label="身高" path="height" >
-          <n-input-number v-model:value="memberForm.height" style="width: 280px;"></n-input-number>
+          <n-input-number v-model:value="memberForm.height" v-enter-scope="[50, 300]" style="width: 280px;"></n-input-number>
         </n-form-item>
         <n-form-item label="体重" path="weight" >
           <n-input-number v-model:value="memberForm.weight" style="width: 280px;"></n-input-number>
