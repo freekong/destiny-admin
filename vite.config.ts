@@ -19,7 +19,7 @@ export default defineConfig({
     }
   },
   server: {
-    host: '192.168.1.13',
+    host: 'localhost',
     port: 5200,
     open: true,
     proxy: {
